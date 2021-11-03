@@ -39,21 +39,35 @@ The goal of this Repo is to provide a novice to ECC the resources to build up th
 
 
 
-## Background <a name="Background"></a>
 
-I have split up my explanation into multiple smaller segments so it's easier to search
+## Haskell Background <a name="BackgroundHaskell"></a>
 
-### Haskell <a name="BackgroundHaskell"></a>
+I won't be explaining the basics of Haskell but [here's](#ReferencesHaskell) some good places to start.
 
-I won't be explaining the basics of Haskell but [here's](#ReferencesHaskell) some good places to start
+- understand then explain Nats and TypeNats
 
-### Cryptography <a name="BachkgroundCryptography"></a>
 
-### Elliptic Curves <a name="BackgroundEllipticCurve"></a>
+## Cryptography Background <a name="BachkgroundCryptography"></a>
 
-### Elliptic Curve Cryptography <a name="BackgroundECC"></a>
+## Elliptic Curves Background <a name="BackgroundEllipticCurve"></a>
 
-### SIDH/SIKE <a name="BackgroundSIDH"></a>
+### What is an Elliptic Curve <a name="WhatisanEllipticCurve"></a>
+
+An elliptic
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
+
+
+### Types
+
+| Name              	| Formula                                                                        	| The unit of group 	| Addition Formula 	| Doubling Formula 	|
+|-------------------	|--------------------------------------------------------------------------------	|-------------------	|------------------	|------------------	|
+| Short Weierstrass 	| y<sup>2</sup> = x<sup>3</sup> + ax + b                                         	| Poif              	| [Here]()         	| [Here]()         	|
+| Montgomery        	| ay<sup>2</sup> = x<sup>3</sup> + bx<sup>2</sup> + x                            	| Poif              	| [Here]()         	| [Here]()         	|
+| Edwards           	| x<sup>2</sup> + y<sup>2</sup> = a<sup>2</sup>(1 + bx<sup>2</sup>y<sup>2</sup>) 	| (0, 1)            	| [Here]()         	| [Here]()         	|
+
+## Elliptic Curve Cryptography Background <a name="BackgroundECC"></a>
+
+## SIDH/SIKE Background <a name="BackgroundSIDH"></a>
 
 
 
