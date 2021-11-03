@@ -1,31 +1,75 @@
 # Haskell-SIDH
-A repo for a haskell implementation of SIDH and general resources for understanding SIDH
+The goal of this Repo is to provide a novice to ECC the resources to build up their understanding to the point of understanding Supersingular Elliptic Curve Diffie Hellman
 
-## Disclaimers
 
- 1. I do not own either of the papers in Research and if you are the copyholder of them I will remove them if asked so just pop a message in issues
+
+## Disclaimers <a name="Disclaimers"></a>
+
+ 1. I do not own either of the papers in the folder Research and if you are the copyholder of them I will remove them if asked so just pop a message in issues
  2. This is not cryptographically secure please don't use this for any purpose except educational
  3. I don't have any formal qualifications to talk about any of this stuff (yet) so I may be wrong with the finer details
 
-## Todo
+
+
+
+
+## Todo <a name="Todo"></a>
 
  - More Comments and explanation in code
  - A thorough explanation of all ECC + SIDH in this file (building off https://github.com/RiverNewbury/Python-Elliptic-Curve-Cryptography)
- - Work out why code didn't work with the basepoints in wikipedia
+ - Work out why code didn't work with the base points in Wikipedia
  - explanation of how to run the code
  - links to more resources
  - understand then explain Nats and TypeNats
  - Make abs return length and signum return unit vector
+ - Make Points work with other curve types
 
-## Explanation of design choices
+
+
+
+
+
+## Explanation of design choices <a name="Explanation_of_design_choices"></a>
 
  - I chose Haskell for this project as I
-  - Am most comfortable in this language as I've done other projects in it
-  - I needed to do this quickly and work around Uni work so I needed a quick prototyping langauge
-  - I think that for explanatory purposes Haskell is a very good
+   - Am most comfortable in this language as I've done other projects in it
+   - I needed to do this quickly and work around Uni work so I needed a quick prototyping language
+   - I think that for explanatory purposes Haskell is a very good
 
-## Links
 
- - [A video explaination of ECC (not me just thought it was a good series) (also if you're generally interested in cryptography his other videos are also good)](https://youtube.com/playlist?list=PLUQANcrG3720AzBFM0eDKEyYtMM8FdcNX)
+
+
+## Background <a name="Background"></a>
+
+I have split up my explanation into multiple smaller segments so it's easier to search
+
+### Haskell <a name="BackgroundHaskell"></a>
+
+I won't be explaining the basics of Haskell but [here's](#ReferencesHaskell) some good places to start
+
+### Cryptography <a name="BachkgroundCryptography"></a>
+
+### Elliptic Curves <a name="BackgroundEllipticCurve"></a>
+
+### Elliptic Curve Cryptography <a name="BackgroundECC"></a>
+
+### SIDH/SIKE <a name="BackgroundSIDH"></a>
+
+
+
+
+
+## References <a name="References"></a>
+
+### Haskell <a name="ReferencesHaskell"></a>
+
+### Cryptography <a name="ReferencesCryptography"></a>
+
+### Elliptic Curve Cryptography <a name="ReferencesECC"></a>
+
+ - [A video explanation of ECC (not mine just thought it was a good series) (also if you're generally interested in cryptography his other videos are also good)](https://youtube.com/playlist?list=PLUQANcrG3720AzBFM0eDKEyYtMM8FdcNX)
+
+### SIDH <a name="ReferencesSIDH"></a>
+
  - [A beginners guide to SSID (recommended after you understand ECC as a jumping off point for SIDH)](https://eprint.iacr.org/2019/1321.pdf)
  - [SIKE Spec (recommended for a in depth review of how it is practically performed)](https://sike.org/files/SIDH-spec.pdf)
