@@ -14,7 +14,7 @@ module GaussianMod
   conjugate,
   showModless,
   ι
-) where
+) where 
 
 -------- Imports ---------------------------------------------------------------
 
@@ -23,7 +23,7 @@ import GHC.TypeNats (Nat, KnownNat, natVal)
 
 -------- Datatypes -------------------------------------------------------------
 
-{- The base value of a Mod is the one where 0 ≤ real, imag < m
+{- The base value of a Mod m is the one where 0 ≤ real, imag < m
 
 INV : All Mod input(s) of f is base values ⇒ all mod output(s) of f is base valued
   - f is any function in this module

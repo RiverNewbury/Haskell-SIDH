@@ -39,6 +39,7 @@ class Eq a => IVS a where
 
 -- |+| binds less tightly than |.| (i.e. p1 |+| k |.| p2 will return p1 |+| (k |.| p2))
 infixl 6 |+|
+infixl 6 |-|
 infixl 7 |.|
 
 

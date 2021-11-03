@@ -15,13 +15,14 @@ A repo for a haskell implementation of SIDH and general resources for understand
  - explanation of how to run the code
  - links to more resources
  - understand then explain Nats and TypeNats
+ - Make abs return length and signum return unit vector
 
 ## Explanation of design choices
 
  - I chose Haskell for this project as I
   - Am most comfortable in this language as I've done other projects in it
   - I needed to do this quickly and work around Uni work so I needed a quick prototyping langauge
-  - I think that for explanatory purposes Haskell is a very good 
+  - I think that for explanatory purposes Haskell is a very good
 
 ## Links
 
