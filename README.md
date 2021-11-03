@@ -53,9 +53,10 @@ I won't be explaining the basics of Haskell but [here's](#ReferencesHaskell) som
 
 ### What is an Elliptic Curve <a name="WhatisanEllipticCurve"></a>
 
-An elliptic
+An elliptic curve has formula
 ![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
 
+![](https://latex.codecogs.com/svg.latex?)
 
 ### Types
 
@@ -64,6 +65,13 @@ An elliptic
 | Short Weierstrass 	| y<sup>2</sup> = x<sup>3</sup> + ax + b                                         	| Poif              	| [Here]()         	| [Here]()         	|
 | Montgomery        	| ay<sup>2</sup> = x<sup>3</sup> + bx<sup>2</sup> + x                            	| Poif              	| [Here]()         	| [Here]()         	|
 | Edwards           	| x<sup>2</sup> + y<sup>2</sup> = a<sup>2</sup>(1 + bx<sup>2</sup>y<sup>2</sup>) 	| (0, 1)            	| [Here]()         	| [Here]()         	|
+
+
+| Name              	| Formula                                                                        	| The unit of group 	| Addition Formula                                                                                                                                                                                                                                                                                           	| Doubling Formula 	|
+|-------------------	|--------------------------------------------------------------------------------	|-------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|------------------	|
+| Short Weierstrass 	| y<sup>2</sup> = x<sup>3</sup> + ax + b                                         	| Poif              	| ![g = \frac{y_2 - y_1}{x_2 - x_1}](https://latex.codecogs.com/svg.latex?g = \frac{y_2 - y_1}{x_2 - x_1})<br>![x3 = g^2 - x_1 - x_2](https://latex.codecogs.com/svg.latex?x3 = g^2 - x_1 - x_2)<br>![y3 = (2x_1 + x_2)*g - g^3 - y_1](https://latex.codecogs.com/svg.latex?y3 = (2x_1 + x_2)*g - g^3 - y_1) 	| [Here]()         	|
+| Montgomery        	| ay<sup>2</sup> = x<sup>3</sup> + bx<sup>2</sup> + x                            	| Poif              	| [Here]()                                                                                                                                                                                                                                                                                                   	| [Here]()         	|
+| Edwards           	| x<sup>2</sup> + y<sup>2</sup> = a<sup>2</sup>(1 + bx<sup>2</sup>y<sup>2</sup>) 	| (0, 1)            	| [Here]()                                                                                                                                                                                                                                                                                                   	| [Here]()         	|
 
 ## Elliptic Curve Cryptography Background <a name="BackgroundECC"></a>
 
