@@ -18,7 +18,7 @@ module Points
 
 import Curves
 import IntVectorSpace
-import GuassianMod (Modℂ, inv)
+import GaussianMod (Modℂ, inv)
 import GHC.TypeNats (Nat, KnownNat)
 
 -------- Datatypes -------------------------------------------------------------

@@ -15,7 +15,7 @@ module Curves
 
 -------- Imports ---------------------------------------------------------------
 
-import GuassianMod (Modℂ, showModless)
+import GaussianMod (Modℂ, showModless)
 import GHC.TypeNats (Nat, KnownNat, natVal)
 
 -------- Datatypes -------------------------------------------------------------

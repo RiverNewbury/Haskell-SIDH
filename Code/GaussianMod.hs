@@ -1,6 +1,6 @@
 {-
-Module      : GuassianMod
-Description : Comtains defintion for the Guassian ℤ mod p (where p∈ℤ)
+Module      : gaussianMod
+Description : Comtains defintion for the gaussian ℤ mod p (where p∈ℤ)
 Maintainer  : River
 -}
 
@@ -8,7 +8,7 @@ Maintainer  : River
 {-# LANGUAGE DataKinds             #-}
 {-# LANGUAGE TypeFamilies          #-}
 
-module GuassianMod
+module GaussianMod
 ( Modℂ,
   inv,
   conjugate,
@@ -58,7 +58,7 @@ inv' :: Integer -> Integer -> Integer
 -- Extended euclidean algorithm : extGCD a b gives (x,y,z) s.t a*x + b+y = z = gcd(a,b)
 extGCD :: Integer -> Integer -> (Integer, Integer, Integer)
 
--- Given a Guassian Int reduces it to base value
+-- Given a gaussian Int reduces it to base value
 baseValue :: KnownNat m => Modℂ m -> Modℂ m
 
 -- Returns the value if imaginary component is 0 ow errors
@@ -93,7 +93,7 @@ backtoInteger _ = error "Needs to have no imaginary component to be converted to
 -- Returns complex conjugate of point (in base form)
 conjugate :: KnownNat m => Modℂ m -> Modℂ m
 
--- Returns the modular inverse of a guassian Int (if possible)
+-- Returns the modular inverse of a gaussian Int (if possible)
 inv :: KnownNat m => Modℂ m -> Modℂ m
 
 -- Shows a general ℂ number without mod

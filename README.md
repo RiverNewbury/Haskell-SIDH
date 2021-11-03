@@ -1,6 +1,12 @@
 # Haskell-SIDH
 A repo for a haskell implementation of SIDH and general resources for understanding SIDH
 
+## Disclaimers
+
+ 1. I do not own either of the papers in Research and if you are the copyholder of them I will remove them if asked so just pop a message in issues
+ 2. This is not cryptographically secure please don't use this for any purpose except educational
+ 3. I don't have any formal qualifications to talk about any of this stuff (yet) so I may be wrong with the finer details
+
 ## Todo
 
  - More Comments and explanation in code
@@ -10,7 +16,12 @@ A repo for a haskell implementation of SIDH and general resources for understand
  - links to more resources
  - understand then explain Nats and TypeNats
 
+## Explanation of design choices
 
+ - I chose Haskell for this project as I
+  - Am most comfortable in this language as I've done other projects in it
+  - I needed to do this quickly and work around Uni work so I needed a quick prototyping langauge
+  - I think that for explanatory purposes Haskell is a very good 
 
 ## Links
 

@@ -16,7 +16,7 @@ module SSID
 -------- Imports ---------------------------------------------------------------
 
 import Points
-import GuassianMod(Modℂ, ι, inv)
+import GaussianMod(Modℂ, ι, inv)
 --import IntVectorSpace
 import GHC.TypeNats (Nat, KnownNat, natVal)
 
