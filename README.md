@@ -53,8 +53,7 @@ I won't be explaining the basics of Haskell but [here's](#ReferencesHaskell) som
 
 ### What is an Elliptic Curve <a name="WhatisanEllipticCurve"></a>
 
-An elliptic curve has formula
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
+An elliptic curve has formula ![y^2=x^3+ax+b](https://latex.codecogs.com/svg.latex?y^2=x^3+ax+b)
 
 ![](https://latex.codecogs.com/svg.latex?)
 
