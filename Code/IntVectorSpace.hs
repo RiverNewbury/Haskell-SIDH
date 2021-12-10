@@ -33,7 +33,10 @@ class Eq a => IVS a where
     (|.|) :: Integer -> a -> a
     (|.|) 0 v = zero
     (|.|) 1 v = v
-    (|.|) x p = if (mod x 2 == 1) then p |+| recAns else recAns
+    (|.|) x p
+        | x < 0 = neg ((-x) |.| p)
+        | (mod x 2 == 1) = p |+| recAns
+        | otherwise = recAns
         where
             recAns = (|.|) (div x 2) (p |+| p)
 
