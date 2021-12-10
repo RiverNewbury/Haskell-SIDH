@@ -90,7 +90,9 @@ add (Point (Montgomery a1 b1) x1 y1 o1) (Point (Montgomery a2 b2) x2 y2 o2)
 -- For Montgomery Curve uses standard formula
 double Zero = Zero
 
-double (Point (Montgomery a b) x y o) = Point curve x3 y3 o3
+double (Point (Montgomery a b) x y o)
+    | y == 0    = Zero
+    | otherwise = Point curve x3 y3 o3
     where
         curve = (Montgomery a b)
 
