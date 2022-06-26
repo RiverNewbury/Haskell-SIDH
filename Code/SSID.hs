@@ -106,6 +106,46 @@ basepB = Point sampleCurve (358*ι + 275) (410*ι + 104) (basewB^baseeB)
 baseqA = Point sampleCurve (426*ι + 394) (51*ι + 79) (basewA^baseeA)
 baseqB = Point sampleCurve (20*ι + 185) (281*ι + 239) (basewB^baseeB)
 
+--------------------------------------------------------------------------------
+
+basewA2 = 2
+basewB2 = 3
+baseeA2 = 63
+baseeB2 = 41
+basef2  = 11
+
+-- in [0, basewA^baseeA)
+kA2 = 11
+-- in [0, basewB^baseeB)
+kB2 = 2
+
+basen2 = ((basewA2^baseeA2) * (basewB2^baseeB2) * basef2 -1)
+
+
+-- b*y^2 = x^3 + a*x^2 + x
+sampleCurve2 = Montgomery {a = 0, b = 1} :: EllipticCurve 3700444163740528325594401040305817124863
+
+basepA2x = (2374093068336250774107936421407893885897*ι + 2524646701852396349308425328218203569693)
+basepA2y = (1944869260414574206229153243510104781725*ι + 1309099413211767078055232768460483417201)
+basepB2x = (1556716033657530876728525059284431761206*ι + 1747407329595165241335131647929866065215)
+basepB2y = (3456956202852028835529419995475915388483*ι + 1975912874247458572654720717155755005566)
+
+
+basepA2 = Point sampleCurve2 basepA2x basepA2y (basewA2^baseeA2)
+basepB2 = Point sampleCurve2 basepB2x basepB2y  (basewB2^baseeB2)
+baseqA2 = Point sampleCurve2 (-1 * basepA2x) (ι * basepA2y) (basewA2^baseeA2)
+baseqB2 = Point sampleCurve2 (-1 * basepB2x) (ι * basepB2y) (basewB2^baseeB2)
+
+secretA2 p q = 2575042839726612324 |.| p |+| 8801426132580632841 |.| q
+secretB2 p q = 4558164392438856871 |.| p |+| 20473135767366569910 |.| q
+
+checkKeyGen :: KnownNat m => Integer -> Integer -> Point m -> Point m -> Point m -> Point m -> Integer -> Integer -> (Modℂ m, Modℂ m)
+checkKeyGen kA kB baseqA baseqB basepA basepB baseeA baseeB = (aSharedSec, bSharedSec)
+    where
+        (aPub1, aPub2) = genAPubKey (secretA2 basepA basepB) basepB baseqB baseeA
+        (bPub1, bPub2) = genBPubKey (secretB2 baseqA baseqB) basepA baseqA baseeB
+        aSharedSec     = genAPrivKey (secretA2 bPub1 bPub2) baseeA
+        bSharedSec     = genBPrivKey (secretB2 bPub1 bPub2) baseeB
 
 -------- Main Functions --------------------------------------------------------
 
@@ -158,8 +198,3 @@ genBPrivKey sB eB = jInvariant $ genIsogeny sB (eB - 1)
         genIsogeny sB i = genIsogeny (f sB) (i-1)
             where
                 f = threeIsogeny (3^i |.| sB)
-
-(aPub1, aPub2) = genAPubKey (basepA |+| kA |.| baseqA) basepB baseqB baseeA
-(bPub1, bPub2) = genBPubKey (basepB |+| kB |.| baseqB) basepA baseqA baseeB
-aSharedSec     = genAPrivKey (bPub1 |+| kA |.| bPub2) baseeA
-bSharedSec     = genBPrivKey (aPub1 |+| kB |.| aPub2) baseeB

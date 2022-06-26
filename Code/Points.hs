@@ -66,7 +66,7 @@ neg' (Point c x y o) =
 add Zero p = p
 add p Zero = p
 -- For Montgomery Curve uses standard formula
-add (Point (Montgomery a1 b1) x1 y1 o1) (Point (Montgomery a2 b2) x2 y2 o2)
+add (Point c1 x1 y1 o1) (Point c2 x2 y2 o2)
     -- Ensures that points are on the same curve
     | c1 /= c2 = error "Both points must be on the same curve"
     -- Checks if points are negations of each other to return the 0
@@ -75,30 +75,28 @@ add (Point (Montgomery a1 b1) x1 y1 o1) (Point (Montgomery a2 b2) x2 y2 o2)
     -- Otherwise does normal algorithm
     | otherwise = Point c1 x3 y3 o3
     where
-        c1 = (Montgomery a1 b1)
-        c2 = (Montgomery a2 b2)
+        vala = a c1
+        valb = b c1
 
-        a = a1
-        b = b1
+        g = (y2 - y1) * inv (x2 - x1)
 
-        g = (y2 - y1) * inv (x2 -x1)
-
-        x3 = b*g*g - a - x1 - x2
-        y3 = (2*x1 + x2 + a)*g - b*g*g*g - y1
+        x3 = valb*g*g - vala - x1 - x2
+        y3 = g * (x2 - x3) - y2-- (2*x1 + x2 + vala)*g - valb*g*g*g - y1
         o3 = o2
 
 -- For Montgomery Curve uses standard formula
 double Zero = Zero
 
-double (Point (Montgomery a b) x y o)
+double (Point curve x y o)
     | y == 0    = Zero
     | otherwise = Point curve x3 y3 o3
     where
-        curve = (Montgomery a b)
+        vala = a curve
+        valb = b curve
 
-        l = (3*x*x + 2*a*x + 1) * inv (2*b*y)
+        l = (3*x*x + 2*vala*x + 1) * inv (2*valb*y)
 
-        x3 = b*l*l - a - 2*x
-        y3 = (3*x + a)*l - b*l*l*l - y
+        x3 = valb*l*l - vala - 2*x
+        y3 = (3*x + vala)*l - valb*l*l*l - y
 
         o3 = o
